@@ -191,14 +191,14 @@ def DFS(state: Board) -> Board:
 
     while not the_stack.is_empty():
         current_board = the_stack.pop()
-        print(current_board)
+        # print(current_board)
         if current_board.goal_test():
             return current_board
         if not current_board.failure_test():
             row, col = current_board.find_most_constrained_cell()
-            print(row, col)
+            # print(row, col)
             possible_values = current_board.rows [row][col]
-            print(possible_values)
+            # print(possible_values)
             for val in possible_values:
                 new_board: Board = copy.deepcopy(current_board)
                 new_board.update(row, col, val)
@@ -216,7 +216,22 @@ def BFS(state: Board) -> Board:
     Returns:
         either None in the case of invalid input or a solved board
     """
-    pass
+    the_stack = Stack()
+    the_stack.push(state)
+
+    while not the_stack.is_empty():
+        current_board = the_stack.pop()
+        # print(current_board)
+        if current_board.goal_test():
+            return current_board
+        if not current_board.failure_test():
+            row, column = current_board.find_most_constrained_cell()
+            # print (row, column)
+            possile_values = current_board.rows [row][column]
+            for value in possile_values:
+                new_board: Board = copy.deepcopy(current_board)
+                new_board.update(row, column, value)
+                the_stack.push(new_board)
 
 
 if __name__ == "__main__":
@@ -374,4 +389,3 @@ if __name__ == "__main__":
     print("<<<<<<<<<<<<<< Testing BFS on Second Game >>>>>>>>>>>>>>")
 
     test_dfs_or_bfs(False, second_moves)
-    pass 
