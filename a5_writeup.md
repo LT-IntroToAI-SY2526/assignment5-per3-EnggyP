@@ -26,8 +26,7 @@ After completing the assignment, answer the following reflection questions:
 
 
 2. How can you apply what you learned in this assignment to future programs or projects? Consider other types of problems that involve searching through possibilities, making decisions, and backtracking when those decisions don't work out. Can you think of real-world scenarios where DFS or BFS might be useful? What about other constraint satisfaction problems?
-
-
+I can apply my knowledgement to a future project of solving mazes since it requires having to traceback steps, possibly repeating the same spot or path,and making decisions of where to go to find the ext. In which, DFS can be useful to find one full path towards the exit and BFS can help the individual find the shortest path for the exit.  
 
 3. Explain how the Stack and Queue classes work and why they are important for DFS and BFS algorithms. Describe the difference between LIFO (Last In First Out) and FIFO (First In First Out) data structures. How does using a Stack versus a Queue change the way the search algorithm explores possible solutions? Why is one data structure better suited for depth-first search and the other for breadth-first search?
-Stack and Queue classes work
+Stack and Queue classes are important for DFS and BFS algorithms because they are controlling the order of which possibilites are explored within. The Stack explores the newest paths first, which helps the algorithms to backtrack quickly whenever it is needed. Stack used the LIFO, where it adds new things on the top and then the most recently added thing is the first one to be removed. The Queue  
